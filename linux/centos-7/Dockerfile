@@ -1,3 +1,3 @@
-FROM debian:wheezy-slim
+FROM centos:7
 
-RUN echo "alias ll='ls -l'" >> /etc/bash.bashrc 
+RUN echo "centos 7"

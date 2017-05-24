@@ -1,3 +1,8 @@
 FROM debian:wheezy
 
-RUN echo "alias ll='ls -l'" >> /etc/bash.bashrc 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+		ca-certificates \
+		curl \
+		wget \
+	&& rm -rf /var/lib/apt/lists/* \
+	&& echo "alias ll='ls -l'" >> /etc/bash.bashrc
