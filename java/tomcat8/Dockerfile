@@ -1,3 +1,3 @@
-FROM debian:wheezy-slim
+FROM chenyibo/openjdk:8
 
 RUN echo "alias ll='ls -l'" >> /etc/bash.bashrc 

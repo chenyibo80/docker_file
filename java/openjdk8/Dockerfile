@@ -1,3 +1,5 @@
-FROM debian:wheezy-slim
+FROM centos:7
 
-RUN echo "alias ll='ls -l'" >> /etc/bash.bashrc 
+RUN \
+  yum install -y java-1.8.0-openjdk && \
+  yum clean all 
