@@ -7,7 +7,7 @@ ENV TOMCAT_TGZ_URL http://mirror.bit.edu.cn/apache/tomcat/tomcat-$MAJOR_VERSION/
 
 RUN \
   cd /tmp && \
-  curl -o "$TOMCAT_TGZ_URL" && \
+  curl -O "$TOMCAT_TGZ_URL" && \
   tar -xvf apache-tomcat-*.tar.gz && \
   rm apache-tomcat-$MINOR_VERSION.tar.gz && \
   mv apache-tomcat-$MINOR_VERSION $CATALINA_HOME && \
