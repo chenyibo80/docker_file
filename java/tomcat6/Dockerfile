@@ -1,7 +1,7 @@
-FROM chenyibo/openjdk:8
+FROM chenyibo/openjdk:6
 
-ENV MAJOR_VERSION 8
-ENV MINOR_VERSION 8.0.44
+ENV MAJOR_VERSION 6
+ENV MINOR_VERSION 6.0.53
 ENV CATALINA_HOME /usr/local/tomcat-$MINOR_VERSION
 ENV TOMCAT_TGZ_URL http://mirror.bit.edu.cn/apache/tomcat/tomcat-$MAJOR_VERSION/v$MINOR_VERSION/bin/apache-tomcat-$MINOR_VERSION.tar.gz
 
