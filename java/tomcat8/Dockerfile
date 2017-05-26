@@ -15,4 +15,4 @@ RUN \
   rm $CATALINA_HOME/bin/*.bat
   
 EXPOSE 8080
-CMD ["$CATALINA_HOME/catalina.sh", "run"]
+CMD ["$CATALINA_HOME/bin/catalina.sh", "run"]
