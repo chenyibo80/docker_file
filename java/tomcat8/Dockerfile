@@ -1,16 +1,17 @@
-FROM chenyibo/openjdk:6
+FROM chenyibo/openjdk:8
 
-ENV MAJOR_VERSION 8 
-ENV MINOR_VERSION 8.0.44 
-ENV CATALINA_HOME /usr/local/tomcat-$MINOR_VERSION 
-ENV TOMCAT_TGZ_URL https://mirrors.aliyun.com/apache/tomcat/tomcat-$MAJOR_VERSION/v$MINOR_VERSION/bin/apache-tomcat-$MINOR_VERSION.tar.gz
+ENV TC_MAJOR 8 
+ENV TC_MINOR 8.0.44 
+ENV CATALINA_HOME /usr/local/tomcat-$TC_MINOR 
+ENV CATALINA_OPTS -Djava.security.egd=file:/dev/urandom
+ENV TOMCAT_TGZ_URL https://mirrors.aliyun.com/apache/tomcat/tomcat-$TC_MAJOR/v$TC_MINOR/bin/apache-tomcat-$TC_MINOR.tar.gz
 
 RUN \
   cd /tmp && \
   curl -O "$TOMCAT_TGZ_URL" && \
-  tar -xvf apache-tomcat-$MINOR_VERSION.tar.gz && \
-  rm apache-tomcat-$MINOR_VERSION.tar.gz && \
-  mv apache-tomcat-$MINOR_VERSION $CATALINA_HOME && \
+  tar -xvf apache-tomcat-$TC_MINOR.tar.gz && \
+  rm apache-tomcat-$TC_MINOR.tar.gz && \
+  mv apache-tomcat-$TC_MINOR $CATALINA_HOME && \
   chmod +x $CATALINA_HOME/bin/*.sh && \
   rm $CATALINA_HOME/bin/*.bat
 
