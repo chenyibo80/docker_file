@@ -16,7 +16,7 @@ RUN \
 
 WORKDIR $CATALINA_HOME
 
-VOLUME ["/usr/local/tomcat-6.0.53/webapps", "/usr/local/tomcat-6.0.53/logs"]
+VOLUME ["$CATALINA_HOME/webapps"]
 
 EXPOSE 8080
 CMD ["bin/catalina.sh", "run"]
